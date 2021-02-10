@@ -125,6 +125,8 @@ def delete_task():
     response.headers['Content-Type'] = 'application/json'
     return json.dumps({'success': True})
 
-if __name__ == "__main__":
-
-    run(host='localhost', port=8080, debug=True)
+if PYTHONANYWHERE:
+    application = default_app()
+else:
+   if __name__ == "__main__":
+       run(host='localhost', port=8080, debug=True)
